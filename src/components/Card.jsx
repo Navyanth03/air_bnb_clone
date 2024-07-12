@@ -1,31 +1,22 @@
-export default function Card(props) {
-    let badgeText
-    if (props.openSpots === 0) {
-        badgeText = "SOLD OUT"
-    } else if (props.location === "Online") {
-        badgeText = "ONLINE"
-    }
-    
-    return (
-        <div className="card">
-            {
-                badgeText && 
-                <div className="card--badge">{badgeText}</div>
-            }
-            <img 
-                src={`./src/images/${props.coverImg}`} 
-                className="card--image" 
-            />
-            <div className="card--stats">
-                <img src="./src/images/star.png" className="card--star" />
-                <span>{props.stats.rating}</span>
-                <span className="gray">({props.stats.reviewCount}) • </span>
-                <span className="gray">{props.location}</span>
+import star from '../assets/experiences/star.png';
+export default function Card(props){
+    const {title,description,price,coverImg,stats,location,openSpots}=props.item;
+    let display;
+    if(openSpots===0)display='SOLD OUT';
+    else if(location==='Online')display='Online';
+    return(
+        <div className='card'>
+            {display && <div className='card-status'>{display}</div>}
+            <img src={`./src/assets/experiences/${coverImg}`} className='card-image' alt="" />
+            <div className='card-stats'>
+                <img src={star} className="star-image" alt="" />
+                <span>{stats.rating}</span>
+                <span className='gray'>({stats.reviewCount})</span>
+                <span className='gray'>•</span>
+                <span className='gray'>{location}</span>
             </div>
-            <p className="card--title">{props.title}</p>
-            <p className="card--price">
-                <span className="bold">From ${props.price}</span> / person
-            </p>
+            <h2 className='card-title'>{title}</h2>
+            <div className='card-price'><b>From ${price}</b> / person</div>
         </div>
     )
 }

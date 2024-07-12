@@ -1,8 +1,14 @@
-# React + Vite
+## AirBnb experience Page Clone (Static) Using React
+- This is a static data driven website created using React.
+- This helps a beginner to understand reusabaility of React components using Props.
+- Data is taken from the hard coded data file.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Used: HTML, CSS, React.
 
-Currently, two official plugins are available:
+## Run Commands
+- npm install
+- npm run dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<u>Image:</u>
+
+![An Image showing some of the events that are available of air bnb](./website.png)

@@ -1,26 +1,24 @@
-import NavBar from './components/NavBar'
-import Hero from './components/Hero'
-import Card from "./components/Card"
-import data from "./data"
+import { useState } from 'react'
+import NavBar from './components/NavBar';
+import Head from './components/Head';
+import Card from './components/Card';
+import data from './data';
+import './App.css'
 
-export default function App() {
-  const cards = data.map(item => {
-      return (
-          <Card
-              key={item.id}
-              {...item}
-              
-          />
-      )
-  })        
-  
+function App() {
+  const [count, setCount] = useState(0)
+
   return (
-      <div>
-          <NavBar />
-          <Hero />
-          <section className="cards-list">
-              {cards}
-          </section>
+    <>
+      <NavBar/>
+      <Head/>
+      <div id='cards-container'>
+        {data.map((item,index)=>{
+          return <Card key={index} item={item} />
+        })}
       </div>
+    </>
   )
 }
+
+export default App
